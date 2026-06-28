@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>英文测试</title>
+    </head>
+    <body>
+        <h1 style = "text-align: center;">欢迎!</h1>
+        <h3 style = "text-align: center;">
+            这个测验是用来让我知道你们英文的水品，也能让我知道自己应该叫些什么!
+        </h3>
+        <h3 style = "text-align: center;">
+            不用单行！这应该是个轻松的测验，只用来帮助我和你.
+        </h3>
+        <button id = "my_Btn" type = "button" style = "display: block; margin: 0 auto;">
+            开始!
+        </button>
+        <script>
+            const my_Btn = document.getElementById("my_Btn");
+            question_list = [
+                "Q1",
+                "Q2",
+                "Q3"
+            ]
+            answer_choices = [
+                "a",
+                "b",
+                "c",
+                "d",
+
+                "1",
+                "2",
+                "3",
+                "4",
+
+                "e",
+                "f",
+                "g",
+                "h"
+            ]
+            question_number = 0
+            choice_number = -1
+            maximum_questions = 3
+            my_Btn.addEventListener("click",function(e){
+                document.body.innerHTML = `
+                    <section id = "replace">
+                        <h2 style = "text-align: center;">` 
+                        + (question_number + 1) +
+                        `</h2>
+                        <h1 style = "text-align: center;">`
+                        + question_list.at(question_number) + 
+                        `</h1>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+1) + 
+                        `</label>
+
+                        <br>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+2)+
+                        `</label>
+
+                        <br>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+3) + 
+                        `</label>
+
+                        <br>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+4) + 
+                        `</label>
+                    </section>
+                    
+                    <br>
+
+                    <button id = "next_btn" type = "button">下一步</button>
+                `
+                const next_btn = document.getElementById("next_btn")
+                function hi() {
+                    question_number = question_number + 1
+                    choice_number = choice_number + 4
+                    document.getElementById("replace").innerHTML = `
+                     <section id = "replace">
+                        <h2 style = "text-align: center;">` 
+                        + (question_number + 1) +
+                        `</h2>
+                        <h1 style = "text-align: center;">`
+                        + question_list.at(question_number) + 
+                        `</h1>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+1) + 
+                        `</label>
+
+                        <br>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+2)+
+                        `</label>
+
+                        <br>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+3) + 
+                        `</label>
+
+                        <br>
+
+                        <input type = "checkbox"><label>`
+                        + answer_choices.at(choice_number+4) + 
+                        `</label>
+                    </section>
+                    `
+                }
+                next_btn.addEventListener("click",hi)
+            })
+            
+        </script>
+    </body>
+</html>
