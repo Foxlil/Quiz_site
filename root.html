@@ -1,21 +1,35 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh">
     <head>
         <meta charset = "UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+        
         <title>英文测试</title>
+        <link rel = "stylesheet" href = "style.css">
     </head>
     <body>
-        <h1 style = "text-align: center;">欢迎!</h1>
-        <h3 style = "text-align: center;">
+        <h1 style = "text-align: center;" class = "Chinese_h1">欢迎!</h1>
+        <h3 style = "text-align: center;" class = "Chinese_h3">
             这个测验是用来让我知道你们英文的水品，也能让我知道自己应该叫些什么!
         </h3>
-        <h3 style = "text-align: center;">
+        <h3 style = "text-align: center;" class = "Chinese_h3">
             不用单行！这应该是个轻松的测验，只用来帮助我和你.
         </h3>
-        <button id = "my_Btn" type = "button" style = "display: block; margin: 0 auto;">
+        <h3 style = "text-align: center;">
+            小心! 点击 “下一步” 的时候，你不能回到上个问题!
+        </h3>
+        <button id = "my_Btn" type = "button" class = "animation" onclick = "audio.play()">
             开始!
         </button>
         <script>
+            const audio = new Audio();
+            audio.src = "click.mp3";
             const my_Btn = document.getElementById("my_Btn");
             question_list = [
                 "Q1",
@@ -23,7 +37,7 @@
                 "Q3"
             ]
             answer_choices = [
-                "a",
+                "aww I love my cat :)",
                 "b",
                 "c",
                 "d",
@@ -38,6 +52,9 @@
                 "g",
                 "h"
             ]
+            correct_answers = [
+
+            ]
             question_number = 0
             choice_number = -1
             maximum_questions = 3
@@ -50,38 +67,45 @@
                         <h1 style = "text-align: center;">`
                         + question_list.at(question_number) + 
                         `</h1>
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+1) + 
+                            `</label>
+                        </div>
+                        <br>
 
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+1) + 
-                        `</label>
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+2)+
+                            `</label>
+                        </div>
+                        <br>
+
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+3) + 
+                            `</label>
+                        </div>
 
                         <br>
 
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+2)+
-                        `</label>
-
-                        <br>
-
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+3) + 
-                        `</label>
-
-                        <br>
-
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+4) + 
-                        `</label>
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+4) + 
+                            `</label>
+                        </div>
                     </section>
                     
                     <br>
 
-                    <button id = "next_btn" type = "button">下一步</button>
+                    <button id = "next_btn" type = "button" class = "animation" onclick = "audio.play()">下一步</button>
                 `
                 const next_btn = document.getElementById("next_btn")
                 function hi() {
-                    question_number = question_number + 1
+                    if (question_number < maximum_questions-1) {
                     choice_number = choice_number + 4
+                    question_number = question_number + 1
+                    console.log(question_number)
                     document.getElementById("replace").innerHTML = `
                      <section id = "replace">
                         <h2 style = "text-align: center;">` 
@@ -90,32 +114,46 @@
                         <h1 style = "text-align: center;">`
                         + question_list.at(question_number) + 
                         `</h1>
-
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+1) + 
-                        `</label>
-
-                        <br>
-
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+2)+
-                        `</label>
+                        
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+1) + 
+                            `</label>
+                        </div>
 
                         <br>
 
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+3) + 
-                        `</label>
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+2)+
+                            `</label>
+                        </div>
 
                         <br>
 
-                        <input type = "checkbox"><label>`
-                        + answer_choices.at(choice_number+4) + 
-                        `</label>
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+3) + 
+                            `</label>
+                        </div>
+
+                        <br>
+
+                        <div class = "checkbox_align">
+                            <input type = "radio" onclick = "audio.play()" name = "answers"><label>`
+                            + answer_choices.at(choice_number+4) + 
+                            `</label>
+                        </div>
                     </section>
                     `
+                    } else {
+                        document.body.innerHTML = `
+                            <h1 style = "text-align: center;">Done! :)</h1>
+                            `
+                    }
                 }
                 next_btn.addEventListener("click",hi)
+                
             })
             
         </script>

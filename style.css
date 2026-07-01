@@ -1,0 +1,76 @@
+html {
+    cursor: url(Cursor.png), auto;
+}
+
+body{
+    background-image:
+        linear-gradient(to bottom, #87c3ff, hsl(189, 100%, 83%));
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-family:'Caveat', cursive;
+}
+
+.ma-shan-zheng-regular {
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caveat {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.Chinese_h1 {
+    font-size: 50px;
+}
+.Chinese_h3 {
+    font-size: 25px;
+}
+
+
+button {
+    cursor: url(Cursor.png), auto;
+    margin:0 auto;
+    display:block;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 20px;
+    transition: all 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.checkbox_align {
+    cursor: url(Cursor.png), auto;
+    margin-left: 200px
+}
+
+label {
+    cursor: url(Cursor.png), auto;
+    font-size: 25px;
+}
+
+input[type="radio"] {
+    cursor: url(Cursor.png), auto;
+}
+
+.animation {
+    background-color: transparent;
+    background-image: url(button.gif);
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 80px;
+    border: none;
+}
+
+
+
