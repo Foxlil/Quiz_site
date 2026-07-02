@@ -1,10 +1,16 @@
+#tiger_wave {
+    display: block;
+    height: 250px;
+    width: 250px;
+    margin: auto;
+}
+
 html {
     cursor: url(Cursor.png), auto;
 }
 
 body{
-    background-image:
-        linear-gradient(to bottom, #87c3ff, hsl(189, 100%, 83%));
+    background-color:#87c3ff;
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -61,6 +67,7 @@ label {
 input[type="radio"] {
     cursor: url(Cursor.png), auto;
 }
+
 
 .animation {
     background-color: transparent;
