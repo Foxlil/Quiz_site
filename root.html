@@ -14,93 +14,340 @@
         <link rel = "stylesheet" href = "style.css">
     </head>
     <body>
-        <h1 style = "text-align: center;" class = "Chinese_h1">欢迎!</h1>
-        <h3 style = "text-align: center;" class = "Chinese_h3">
-            这个测验是用来让我知道你们英文的水品，也能让我知道自己应该叫些什么!
-        </h3>
-        <h3 style = "text-align: center;" class = "Chinese_h3">
-            不用单行！这应该是个轻松的测验，只用来帮助我和你.
-        </h3>
-        <h3 style = "text-align: center;">
-            注意! 点击 “下一步” 的时候，你不能回到上个问题!
-        </h3>
-        <button id = "my_Btn" type = "button" class = "animation" onclick = "audio.play()">
-            开始!
-        </button>
-        <br>
-        <br>
-        <img src = "Tiger_wave.gif" alt = "Gif of a tiger waving!" id = "tiger_wave">
+        <section>
+                <br>
+                <h1 style = "text-align: center;" class = "Chinese_h1"><span>欢迎!</span></h1>
+                <div class = "text_background">
+                    <h3 style = "text-align: center;" class = "Chinese_h3">
+                        这个测验是用来让我知道你们英文的水品，也能让我知道自己应该叫些什么!
+                    </h3>
+                    <h3 style = "text-align: center;" class = "Chinese_h3">
+                        不用单行！这应该是个轻松的测验，只用来帮助我和你.
+                    </h3>
+                    <h3 style = "text-align: center;">
+                        注意! 点击 “下一步” 的时候，你不能回到上个问题!
+                    </h3>
+                </div>
+            <br>
+            <button id = "my_Btn" type = "button" class = "animation" onclick = "audio.play()">
+                开始!
+            </button>
+            <br>
+            <img src = "Tiger_wave.gif" alt = "Gif of a tiger waving!" id = "tiger_wave">
+        </section>
         <script>
             score = 0;
             const audio = new Audio();
             audio.src = "click.mp3";
             const my_Btn = document.getElementById("my_Btn");
             question_list = [
-                "Q1",
-                "Q2",
-                "Q3"
+                "I have ___ big apple. It is ___ than the other one.",
+                "Choose the correct spelling.",
+                "Which word is a noun?",
+                "This is my sister. ___ is a student with ___ books.",
+                "Which word is an adjective?",
+                "Sarah looks ____ today. She is playing ____ her friends.",
+
+                "____ are you? ____ are you feeling? ____ were you? _____ is your name?",
+                "John is a boy. ____ says hi. The dog is his pet. ___ says hi. ____ both say hi.",
+                "Which pronouns match with which possessive adjectives?",
+                "Which word is in present tense?",
+                "Which word is the plural of 'party'?",
+                "Which is the correct sentece?",
+
+                "Which is the correct sentence?",
+                "Make this sentence into a question: 'There is a pen in the box.'",
+                "A girl swims. What can the girl do?",
+                "Use there is/there are and prepositions in, on, under, between. Apple on the table.",
+                "A boy holds a map. Say what the boy has.",
+                "青蛙。__og. 玻璃。__ass. 老鼠。m__se.",
+
+                "Messi's fans are rooting for him. What does rooting mean, here?",
+                "A verb tense that expresses an action in the past",
+                "The words or phrases that help us understand difficult words are called:",
+                "Which sentence has the correct use of simple future tense of the verb?",
+                "Which word has a similar meaning to referring to?",
+                "Who ____ behind the curtains last night? The verb is stand.",
+
+                "Which sentence is correct?",
+                "Sara and her family went to the zoo. They saw elephants and lions. It was a fun day.",
+                "Change this sentence to the past tense: 'I play football on Friday.",
+                "Ahmed was very tired. He drank some water and sat under a tree. Why did he sit under the tree?",
+                "Yesterday, Fatima went to the park with her brother. They played on the swings. Where did Fatima go yesterday?",
+                "Ali wakes up and goes to school. After school, he does homework and plays with his friends. What does Ali do after school?",
+
+                "Marie was very pleased ___ the presents she received for her birthday.",
+                "My cousins stayed ___ at my house last weekend.",
+                "Stop eating ____ meals at night and start eating ____.",
+                "My grandma is a very ___ lady. She always speaks ____.",
+                "Michael's married. ____ wife is a dancer.",
+                "My grandparents live on the other side of the street. That's ___ house, the blue one."
             ]
             answer_choices = [
-                "aww I love my cat :)",
-                "b",
-                "c",
-                "d",
+                "the...biggest",
+                "a...bigger",
+                "an...big",
+                "any...bigger",
 
-                "1",
-                "2",
-                "3",
-                "4",
+                "dres",
+                "sweter",
+                "shoes",
+                "jamper",
 
-                "e",
-                "f",
-                "g",
-                "h"
+                "farm",
+                "find",
+                "funny",
+                "fast",
+
+                "he...lots",
+                "they are...much",
+                "her...many",
+                "she...many",
+
+                "tree",
+                "love",
+                "short",
+                "leaf",
+
+                "beautifully...with",
+                "beautiful...with",
+                "pretty...and",
+                "beautifull...with",
+
+                "Where...Who...How...When",
+                "What...How...Where...How",
+                "How...Who...What...Where",
+                "Who...How...Where...What",
+
+                "It...He...They",
+                "She...He...Them",
+                "Them...they...He",
+                "He...It...They",
+
+                "I, my",
+                "You, yous",
+                "She, their",
+                "He, its",
+
+                "Used",
+                "Finished",
+                "Throws",
+                "Danced",
+
+                "Party",
+                "Partied",
+                "Partys",
+                "Parties",
+
+                "These are fruit. I got them on friday.",
+                "Where did you get those? I only saw them on Monday.",
+                "Hi, I'm Bob? These is a cool name, right.",
+                "These is a cat. I got it on Wendsday.",
+
+                "These isn't pencils.",
+                "This aren't a boy.",
+                "These are books.",
+                "This aren't a crayon.",
+
+                "Is there pens in the box?",
+                "Is there a pen in the box?",
+                "There is a pen in the box?",
+                "Are there pens in the boxes?",
+
+                "She swims",
+                "The girl can swims",
+                "The girl swimming",
+                "The girl can swim",
+
+                "There is an apple on the table.",
+                "There are an apple on the table.",
+                "There is a apple on the table.",
+                "An apple is on the table.",
+
+                "She has a map.",
+                "They have a map.",
+                "He has a map.",
+                "His have a map.",
+
+                "fr...gl...ous",
+                "c...cr...o",
+                "l...gr...oo",
+                "fr...gl...ou",
+
+                "To become roots",
+                "To wish for someone's success",
+                "To prepare things carefully",
+                "To be rooted in something",
+
+                "Simple present",
+                "Simple past",
+                "Simple future",
+                "Present tense",
+
+                "Predicting outcome",
+                "Context clues",
+                "Fact",
+                "Opinion",
+
+                "My sister cry yesterday, because she wants a milk.",
+                "Tom stays at home yesterday",
+                "How much money will your father earn every month?",
+                "Please, helped me.",
+
+                "Usually",
+                "soft wood chips",
+                "Ignored",
+                "Talking about",
+
+                "stands",
+                "standing",
+                "stood",
+                "stand",
+
+                "She go to school every day",
+                "She goes to school every day",
+                "She going to school every day",
+                "He gone to school every day",
+
+                "The zoo",
+                "The park",
+                "The school",
+                "The market",
+
+                "I played football on Friday",
+                "I play football on Friday",
+                "I plays football on Friday",
+                "I play football on friday",
+
+                "He wanted to climb it",
+                "He was looking for birds",
+                "He was tired.",
+                "He was waiting for someone",
+
+                "The school.",
+                "The field.",
+                "The bridge.",
+                "The park.",
+
+                "Eats breakfast",
+                "Goes to sleep",
+                "Does homework and plays",
+                "Brushes his teeth",
+
+                "about",
+                "by",
+                "with",
+                "how",
+
+                "over",
+                "in",
+                "around",
+                "with",
+
+                "heavy...health",
+                "heavy...healthily",
+                "heavily....healthily",
+                "heavily...health",
+
+                "calm...softly",
+                "calmly...softly",
+                "calm...soft",
+                "calmly...soft",
+
+                "She",
+                "Him",
+                "Her",
+                "His",
+
+                "His",
+                "Her",
+                "Their",
+                "Them",
             ]
             correct_answers = [
-                1,
                 2,
+                3,
+                1,
+                4,
+                3,
+                2,
+                4,
+                4,
+                1, 
+                3,
+                4, 
+                2,
+                3, 
+                2,
+                4,
+                1, 
+                3,
+                4,
+                2, 
+                2, 
+                2, 
+                3, 
+                4,
+                3,
+                2,
+                1,
+                1,
+                3, 
+                4, 
+                3,
+                3,
+                1,
+                2, 
+                1, 
+                4, 
                 3
             ]
-            
+            Unit = 0
+            Unit_0 = 0
+            Unit_1 = 0
+            Unit_2 = 0
+            Unit_3 = 0
+            Unit_4 = 0
+            Unit_5 = 0
             which_questions_wrng = []
             question_number = 0
             choice_number = -1
-            maximum_questions = 3
+            maximum_questions = 30
             my_Btn.addEventListener("click",function(e){
                 document.body.innerHTML = `
                     <section id = "replace">
                         <h2 style = "text-align: center;">` 
                         + (question_number + 1) +
                         `</h2>
-                        <h1 style = "text-align: center;">`
+                        <h1 style = "text-align: center;"><span>`
                         + question_list.at(question_number) + 
-                        `</h1>
+                        `</span></h1>
+                        <br>
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "1"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "1"><label>`
                             + answer_choices.at(choice_number+1) + 
-                            `</label>
+                            `</div></label>
                         </div>
                         <br>
-
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "2"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "2"><label>`
                             + answer_choices.at(choice_number+2)+
-                            `</label>
+                            `</div></label>
                         </div>
                         <br>
 
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "3"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "3"><label>`
                             + answer_choices.at(choice_number+3) + 
-                            `</label>
+                            `</div></label>
                         </div>
 
                         <br>
 
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "4"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "4"><label>`
                             + answer_choices.at(choice_number+4) + 
-                            `</label>
+                            `</div></label>
                         </div>
                     </section>
                     
@@ -116,53 +363,80 @@
                     const two = document.getElementById(2);
                     const three = document.getElementById(3);
                     const four = document.getElementById(4);
-                    const one_imposter = document.getElementById(correct_answers.at(question_number));
+                    if (question_number < 6) {
+                        Unit = 0
+                    } else if (question_number == 6 || question_number < 12) {
+                        Unit = 1
+                    } else if (question_number == 12 || question_number < 18) {
+                        Unit = 2
+                    } else if (question_number == 18 || question_number < 24) {
+                        Unit = 3
+                    } else if (question_number == 24 || question_number < 30) {
+                        Unit = 4
+                    } else if (question_number == 30 || question_number < 36) {
+                        Unit = 5
+                    }
+
                     if (document.getElementById(correct_answers.at(question_number)).checked) {
                         score = score + 1;
+                        if (Unit == 0) {
+                            Unit_0 = Unit_0 + 1
+                        } else if (Unit == 1) {
+                            Unit_1 = Unit_1 + 1
+                        } else if (Unit == 2) {
+                            Unit_2 = Unit_2 + 1
+                        } else if (Unit == 3) {
+                            Unit_3 = Unit_3 + 1
+                        } else if (Unit == 4) {
+                            Unit_4 = Unit_4 + 1
+                        } else if (Unit == 5) {
+                            Unit_5 = Unit_5 + 1
+                        }
                     } else {
                         which_questions_wrng.push(question_number+1);
                     }
                     if (question_number < maximum_questions-1) {
-                    choice_number = choice_number + 4
-                    question_number = question_number + 1
+                    console.log("Yep")
+                        choice_number = choice_number + 4
+                        question_number = question_number + 1
                     console.log(question_number)
                     document.getElementById("replace").innerHTML = `
                      <section id = "replace">
                         <h2 style = "text-align: center;">` 
                         + (question_number + 1) +
                         `</h2>
-                        <h1 style = "text-align: center;">`
+                        <h1 style = "text-align: center;"><span>`
                         + question_list.at(question_number) + 
-                        `</h1>
-                        
+                        `</span></h1>
+                        <br>
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "1"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "1"><label>`
                             + answer_choices.at(choice_number+1) + 
-                            `</label>
+                            `</div></label>
                         </div>
 
                         <br>
 
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "2"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "2"><label>`
                             + answer_choices.at(choice_number+2)+
-                            `</label>
+                            `</div></label>
                         </div>
 
                         <br>
 
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "3"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "3"><label>`
                             + answer_choices.at(choice_number+3) + 
-                            `</label>
+                            `</div></label>
                         </div>
 
                         <br>
 
                         <div class = "checkbox_align">
-                            <input type = "radio" onclick = "audio.play()" name = "answers" id = "4"><label>`
+                            <div class = "txt_background2"><input type = "radio" onclick = "audio.play()" name = "answers" id = "4"><label>`
                             + answer_choices.at(choice_number+4) + 
-                            `</label>
+                            `</div></label>
                         </div>
                     </section>
                     `
@@ -171,6 +445,8 @@
                             <h1 style = "text-align: center;">Done! :)</h1>
                             <h1 style = "text-align: center;">Score:` + score + `</h1>
                             <h1 style = "text-align: center;">Wrong questions:` + which_questions_wrng + `</h1>
+                            <h1>Unit 0:` +Unit_0+ `</h1>
+                            <h1>Unit 1:` +Unit_1+ `</h1>
                             `
                     }
                 }
