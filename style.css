@@ -1,3 +1,13 @@
+:root {
+    --Unit_0:0;
+    --Unit_1:0;
+    --Unit_2:0;
+    --Unit_3:0;
+    --Unit_4:0;
+    --Unit_5:0;
+    --question_number:0;
+}
+
 #tiger_wave {
     display: block;
     height: 250px;
@@ -93,6 +103,25 @@ input[type="radio"] {
     cursor: url(Cursor.png), auto;
 }
 
+.Tiger_thinking {
+    display: block;
+    margin: auto;
+    width: 100px;
+}
+
+.progress_bar {
+    display: block;
+    margin: auto;
+    height: 80px;   
+    position: static;
+}
+
+.progess_tiger {
+    height: 90px;
+    position: absolute;
+    margin-left: 320px;
+    transform: translateX(calc(var(--question_number)*19.4444444444px));
+}
 
 .animation {
     background-color: transparent;
@@ -104,5 +133,115 @@ input[type="radio"] {
     border: none;
 }
 
+.bar_graph {
+    margin-left: 200px;
+    display: table;
+    background-color: rgb(47, 101, 171);
+    border-radius: 50px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    padding-left: 5px;
+    padding-right:10px;
+    color: rgb(214, 246, 255);
+    align-items: center;
+}
 
+.rectangle-bg {
+    margin-left: 310px;
+    width: 400px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: rgb(47, 101, 171);
+    position: absolute;
+}
+
+
+.rectangle0 {
+    margin-left: 310px;
+    width: calc((var(--Unit_0) / 6) * (400px));
+    height: 50px;
+    background-color: rgb(214, 246, 255);
+    border-radius: 50px;
+    animation: expand 1.5s ease-out forwards;
+    transform-origin: left;
+    box-shadow: 3px 5px rgb(47, 101, 171);
+    align-items: center;
+    position: static;
+}
+
+.rectangle1{
+    margin-left: 310px;
+    width: calc((var(--Unit_1) / 6) * (400px));
+    height: 50px;
+    background-color: rgb(214, 246, 255);
+    border-radius: 50px;
+    animation: expand 1.5s ease-out forwards;
+    transform-origin: left;
+    box-shadow: 3px 5px rgb(47, 101, 171);
+    position: static;
+}
+
+.rectangle2{
+    margin-left: 310px;
+    width: calc((var(--Unit_2) / 6) * (400px));
+    height: 50px;
+    background-color: rgb(214, 246, 255);
+    border-radius: 50px;
+    animation: expand 1.5s ease-out forwards;
+    transform-origin: left;
+    box-shadow: 3px 5px rgb(47, 101, 171);
+    position: static;
+}
+
+.rectangle3{
+    margin-left: 310px;
+    width: calc((var(--Unit_3) / 6) * (400px));
+    height: 50px;
+    background-color: rgb(214, 246, 255);
+    border-radius: 50px;
+    animation: expand 1.5s ease-out forwards;
+    transform-origin: left;
+    box-shadow: 3px 5px rgb(47, 101, 171);
+    position: static;
+}
+
+.rectangle4{
+    margin-left: 310px;
+    width: calc((var(--Unit_4) / 6) * (400px));
+    height: 50px;
+    background-color: rgb(214, 246, 255);
+    border-radius: 50px;
+    animation: expand 1.5s ease-out forwards;
+    transform-origin: left;
+    box-shadow: 3px 5px rgb(47, 101, 171);
+    position: static;
+}
+
+.rectangle5{
+    margin-left: 310px;
+    width: calc((var(--Unit_5) / 6) * (400px));
+    height: 50px;
+    background-color: rgb(214, 246, 255);
+    border-radius: 50px;
+    animation: expand 1.5s ease-out forwards;
+    transform-origin: left;
+    box-shadow: 3px 5px rgb(47, 101, 171);
+    position: static;
+}
+
+@keyframes expand {
+    0% {
+        transform:scaleX(0);
+    }
+    100% {
+        transform:scaleX(1);
+    }
+}
+
+.Tiger_celebration {
+    margin-left:800px;
+    transform: translateY(-50px);
+    width: 500px;
+    position: absolute;
+}
 

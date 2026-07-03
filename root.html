@@ -312,7 +312,7 @@
             which_questions_wrng = []
             question_number = 0
             choice_number = -1
-            maximum_questions = 30
+            maximum_questions = 36
             my_Btn.addEventListener("click",function(e){
                 document.body.innerHTML = `
                     <section id = "replace">
@@ -354,6 +354,11 @@
                     <br>
 
                     <button id = "next_btn" type = "button" class = "animation" onclick = "audio.play()">下一步</button>
+                    <br>
+                    <img src = "Tiger_thinking.gif" class = "Tiger_thinking">
+                    <br>
+                    <img src = "Tiger_head.png" class = "progess_tiger">
+                    <img src = "bar.png" class = "progress_bar">
                 `
                 
                 
@@ -363,18 +368,24 @@
                     const two = document.getElementById(2);
                     const three = document.getElementById(3);
                     const four = document.getElementById(4);
-                    if (question_number < 6) {
+                    if ((question_number+1) < 6) {
                         Unit = 0
-                    } else if (question_number == 6 || question_number < 12) {
+                        console.log(Unit);
+                    } else if ((question_number+1) == 6 || (question_number+1) < 12) {
                         Unit = 1
-                    } else if (question_number == 12 || question_number < 18) {
+                        console.log(Unit);
+                    } else if ((question_number+1) == 12 || (question_number+1) < 18) {
                         Unit = 2
-                    } else if (question_number == 18 || question_number < 24) {
+                        console.log(Unit);
+                    } else if ((question_number+1) == 18 || (question_number+1) < 24) {
                         Unit = 3
-                    } else if (question_number == 24 || question_number < 30) {
+                        console.log(Unit);
+                    } else if ((question_number+1) == 24 || (question_number+1) < 30) {
                         Unit = 4
-                    } else if (question_number == 30 || question_number < 36) {
+                        console.log(Unit);
+                    } else if ((question_number+1) == 30 || (question_number+1) < 36) {
                         Unit = 5
+                        console.log(Unit);
                     }
 
                     if (document.getElementById(correct_answers.at(question_number)).checked) {
@@ -395,11 +406,19 @@
                     } else {
                         which_questions_wrng.push(question_number+1);
                     }
+
+                    var root = document.querySelector(':root');
+                    root.style.setProperty('--Unit_0', Unit_0);
+                    root.style.setProperty('--Unit_1', Unit_1);
+                    root.style.setProperty('--Unit_2', Unit_2);
+                    root.style.setProperty('--Unit_3', Unit_3);
+                    root.style.setProperty('--Unit_4', Unit_4);
+                    root.style.setProperty('--Unit_5', Unit_5);
+
                     if (question_number < maximum_questions-1) {
-                    console.log("Yep")
                         choice_number = choice_number + 4
                         question_number = question_number + 1
-                    console.log(question_number)
+                        root.style.setProperty('--question_number',question_number);
                     document.getElementById("replace").innerHTML = `
                      <section id = "replace">
                         <h2 style = "text-align: center;">` 
@@ -442,16 +461,31 @@
                     `
                     } else {
                         document.body.innerHTML = `
-                            <h1 style = "text-align: center;">Done! :)</h1>
-                            <h1 style = "text-align: center;">Score:` + score + `</h1>
-                            <h1 style = "text-align: center;">Wrong questions:` + which_questions_wrng + `</h1>
-                            <h1>Unit 0:` +Unit_0+ `</h1>
-                            <h1>Unit 1:` +Unit_1+ `</h1>
+                            <br>
+                            <h1 style = "text-align: center;" class = "text_background">完成了!</h1>
+                            <br>
+                            <h1 style = "text-align: center;" class = "text_background">分数:` + score + `</h1>
+                            <br>
+                            <img src = "Tiger_celebrating.gif" class = "Tiger_celebration">
+                            <br>
+                            <h3 style = "position: absolute;" class = "bar_graph">Kindergarden</h3><div class = "rectangle-bg"></div><div class = "rectangle0"></div>
+                            <br>
+                            <h3 style = "position: absolute" class = "bar_graph">First grade</h3><div class = "rectangle-bg"></div><div class = "rectangle1"></div>
+                            <br>
+                            <h3 style = "position: absolute" class = "bar_graph">Second grade</h3><div class = "rectangle-bg"></div><div class = rectangle2></div>
+                            <br>
+                            <h3 style = "position: absolute" class = "bar_graph">Third grade</h3><div class = "rectangle-bg"></div><div class = rectangle3></div>
+                            <br>
+                            <h3 style = "position: absolute" class = "bar_graph">Fourth grade</h3><div class = "rectangle-bg"></div><div class = rectangle4></div>
+                            <br>
+                            <h3 style = "position: absolute" class = "bar_graph">Fifth grade</h3><div class = "rectangle-bg"></div><div class = rectangle5></div>
+                            <br>
+                            <h1 style = "text-align: center;" class = "text_background">Wrong questions:` + which_questions_wrng + `</h1>
+                            <br>
                             `
                     }
                 }
                 next_btn.addEventListener("click",hi)
-                
             })
             
         </script>
